@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.sdk.movieapp.presentation.movie.MovieFragment"
+        android:label="fragment_movie"
+        tools:layout="@layout/fragment_movie">
+
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.sdk.movieapp.presentation.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite">
+
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.sdk.movieapp.presentation.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search"/>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.sdk.movieapp.presentation.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.sdk.movieapp.presentation.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+</navigation>

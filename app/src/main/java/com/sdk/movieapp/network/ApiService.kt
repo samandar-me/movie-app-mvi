@@ -1,5 +1,6 @@
 package com.sdk.movieapp.network
 
+import com.sdk.movieapp.model.MovieByIdResponse
 import com.sdk.movieapp.model.MovieSearchResponse
 import com.sdk.movieapp.model.Movies
 import com.sdk.movieapp.util.Constants
@@ -25,5 +26,5 @@ interface ApiService {
     suspend fun searchById(
         @Path("movie_id") movie_id: Int,
         @Query("api_key") api_key: String = Constants.API_KEY
-    )
+    ): MovieByIdResponse
 }
