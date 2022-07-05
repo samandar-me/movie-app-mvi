@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.sdk.movieapp.model.Result
 import com.sdk.movieapp.util.Constants
 
-@Database(entities = [Result::class], version = 1, exportSchema = false)
+@Database(entities = [Result::class], version = 2, exportSchema = false)
 abstract class MovieDatabase : RoomDatabase() {
     abstract fun movieDao(): MovieDao
 
@@ -24,6 +24,6 @@ abstract class MovieDatabase : RoomDatabase() {
             context,
             MovieDatabase::class.java,
             Constants.DATABASE_NAME,
-        ).build()
+        ).allowMainThreadQueries().fallbackToDestructiveMigration().build()
     }
 }

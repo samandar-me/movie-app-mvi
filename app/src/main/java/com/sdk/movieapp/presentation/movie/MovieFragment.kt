@@ -37,8 +37,11 @@ class MovieFragment : Fragment() {
 
     private fun initViews(view: View) {
         viewModel = ViewModelProvider(this)[MovieViewModel::class.java]
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.userIntent.send(MainIntent.FetchMovies)
+        binding.btnGet.setOnClickListener {
+            viewLifecycleOwner.lifecycleScope.launch {
+                viewModel.userIntent.send(MainIntent.FetchMovies)
+            }
+            binding.btnGet.isVisible = false
         }
         setupRv()
         observe()
@@ -73,6 +76,7 @@ class MovieFragment : Fragment() {
                         binding.progressBar.isVisible = false
                         binding.recyclerView.isVisible = true
                         movieAdapter.submitList(it.movies.results)
+                        binding.btnGet.isVisible = it.movies.results.isEmpty()
                     }
                 }
             }

@@ -22,4 +22,7 @@ class FavoriteViewModel: ViewModel() {
             }
         }
     }
+    fun deleteAllMovies() = viewModelScope.launch {
+        favoriteRepository.deleteAllMovies()
+    }
 }

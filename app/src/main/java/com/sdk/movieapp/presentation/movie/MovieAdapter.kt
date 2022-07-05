@@ -45,7 +45,6 @@ class MovieAdapter : ListAdapter<Result, MovieAdapter.MovieViewHolder>(DiffCallB
                 textView.text = result.original_title
                 textRank.text = result.vote_average.toString()
                 textLan.text = "Language: ${result.original_language}"
-                textDesc.text = "Overview: ${result.overview}"
 
                 val image = "${Constants.BASE_IMG}${result.poster_path}"
 

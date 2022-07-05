@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewOutlineProvider
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.sdk.movieapp.R
@@ -41,7 +43,8 @@ class FavoriteFragment : Fragment() {
             movieAdapter.submitList(list)
         }
         movieAdapter.onClick = {
-
+            val bundle = bundleOf("result" to it)
+            view.findNavController().navigate(R.id.action_mainFragment_to_detailFragment, bundle)
         }
     }
 

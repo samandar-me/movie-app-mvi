@@ -63,16 +63,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:textColor="@color/black"
+        android:text="@string/app_name"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:id="@+id/textLan"/>
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="270dp"
-        android:id="@+id/textDesc"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="35dp"
-        android:text="@string/text"
-        android:textColor="@color/black" />
 
 </LinearLayout>
 
