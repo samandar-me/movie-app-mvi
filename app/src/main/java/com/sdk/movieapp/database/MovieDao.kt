@@ -15,6 +15,6 @@ interface MovieDao {
     @Query("DELETE FROM Movie")
     suspend fun deleteAllMovies()
 
-    @Query("SELECT * FROM Movie")
+    @Query("SELECT * FROM Movie ORDER BY id ASC")
     fun getAllMovies(): Flow<List<Result>>
 }

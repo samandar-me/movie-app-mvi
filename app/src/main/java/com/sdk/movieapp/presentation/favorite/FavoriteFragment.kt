@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import com.sdk.movieapp.R
 import com.sdk.movieapp.database.MovieDatabase
 import com.sdk.movieapp.databinding.FragmentFavoriteBinding
+import com.sdk.movieapp.model.Result
 import com.sdk.movieapp.presentation.movie.MovieAdapter
 
 class FavoriteFragment : Fragment() {
@@ -43,7 +44,8 @@ class FavoriteFragment : Fragment() {
             movieAdapter.submitList(list)
         }
         movieAdapter.onClick = {
-            val bundle = bundleOf("result" to it)
+            val result = Result(it.id, it.backdrop_path, it.original_language, it.original_title, it.overview, it.poster_path, it.vote_average,  true)
+            val bundle = bundleOf("result" to result)
             view.findNavController().navigate(R.id.action_mainFragment_to_detailFragment, bundle)
         }
     }

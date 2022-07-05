@@ -59,6 +59,14 @@ class DetailFragment : Fragment() {
         binding.btnBack.setOnClickListener {
             view.findNavController().popBackStack()
         }
+        binding.btnDelSv.setOnClickListener {
+            if (result.isSaved) {
+                viewModel.deleteMovie(result)
+                it.findNavController().popBackStack()
+            } else {
+                viewModel.saveMovie(result)
+            }
+        }
     }
 
     override fun onDestroyView() {
